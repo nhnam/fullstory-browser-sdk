@@ -81,4 +81,4 @@ const initOnce = (fn, message) => (...args) => {
 
 export const init = initOnce(_init, 'FullStory init has already been called once, additional invocations are ignored');
 
-const isInitialized = () => window._fs_initialized;
+export const isInitialized = () => window._fs_initialized;
