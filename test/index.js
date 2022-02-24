@@ -83,7 +83,7 @@ describe('init', () => {
     });
 
     isInit = FullStory.isInitialized();
-    expect(window._fs_dev_mode).to.equal(true);
+    expect(isInit).to.equal(true);
   });
 });
 
