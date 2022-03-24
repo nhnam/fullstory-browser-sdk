@@ -6,7 +6,10 @@
   "homepage": "https://github.com/fullstorydev/fullstory-react-native",
   "author": "FullStory",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "lib/commonjs/index.js",
+  "react-native": "src/index.js",
+  "module": "lib/module/index.js",
+  "types": "lib/typescript/src/index.d.ts",
   "keywords": [
     "react-native",
     "fullstory"
@@ -18,5 +21,41 @@
   "peerDependencies": {
     "react": "*",
     "react-native": ">=0.61.0"
-  }
+  },
+  "devDependencies": {
+    "@types/react-native": "0.67.3",
+    "react": "17.0.2",
+    "react-native": "0.67.4",
+    "react-native-builder-bob": "0.18.2",
+    "typescript": "4.6.2"
+  },
+  "scripts": {
+    "prepare": "bob build"
+  },
+  "files": [
+    "src",
+    "lib",
+    "ios",
+    "android",
+    "*.podspec",
+    "!android/build",
+    "!ios/build",
+    "!.circleci",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ]
 }
